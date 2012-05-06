@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		434E7A0515573497009F0725 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434E7A0415573497009F0725 /* UIKit.framework */; };
+		434E7A0715573497009F0725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434E7A0615573497009F0725 /* Foundation.framework */; };
+		434E7A0915573497009F0725 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434E7A0815573497009F0725 /* CoreGraphics.framework */; };
+		434E7A0F15573497009F0725 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 434E7A0D15573497009F0725 /* InfoPlist.strings */; };
+		434E7A1115573497009F0725 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 434E7A1015573497009F0725 /* main.m */; };
+		434E7A1515573498009F0725 /* RTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 434E7A1415573498009F0725 /* RTAppDelegate.m */; };
+		434E7A1815573498009F0725 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434E7A1615573498009F0725 /* MainStoryboard_iPhone.storyboard */; };
+		434E7A1B15573498009F0725 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434E7A1915573498009F0725 /* MainStoryboard_iPad.storyboard */; };
+		434E7A1E15573498009F0725 /* RTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434E7A1D15573498009F0725 /* RTViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		434E7A0015573497009F0725 /* iRumpetroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRumpetroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		434E7A0415573497009F0725 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		434E7A0615573497009F0725 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		434E7A0815573497009F0725 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		434E7A0C15573497009F0725 /* iRumpetroll-Info.plist */ = {isa = PBXFileReference; path = "iRumpetroll-Info.plist"; sourceTree = "<group>"; };
+		434E7A0E15573497009F0725 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		434E7A1015573497009F0725 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		434E7A1215573498009F0725 /* iRumpetroll-Prefix.pch */ = {isa = PBXFileReference; path = "iRumpetroll-Prefix.pch"; sourceTree = "<group>"; };
+		434E7A1315573498009F0725 /* RTAppDelegate.h */ = {isa = PBXFileReference; path = RTAppDelegate.h; sourceTree = "<group>"; };
+		434E7A1415573498009F0725 /* RTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTAppDelegate.m; sourceTree = "<group>"; };
+		434E7A1715573498009F0725 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		434E7A1A15573498009F0725 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		434E7A1C15573498009F0725 /* RTViewController.h */ = {isa = PBXFileReference; path = RTViewController.h; sourceTree = "<group>"; };
+		434E7A1D15573498009F0725 /* RTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		434E79FD15573497009F0725 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				434E7A0515573497009F0725 /* UIKit.framework in Frameworks */,
+				434E7A0715573497009F0725 /* Foundation.framework in Frameworks */,
+				434E7A0915573497009F0725 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		434E79F515573497009F0725 = {
+			isa = PBXGroup;
+			children = (
+				434E7A0A15573497009F0725 /* iRumpetroll */,
+				434E7A0315573497009F0725 /* Frameworks */,
+				434E7A0115573497009F0725 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		434E7A0115573497009F0725 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				434E7A0015573497009F0725 /* iRumpetroll.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		434E7A0315573497009F0725 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				434E7A0415573497009F0725 /* UIKit.framework */,
+				434E7A0615573497009F0725 /* Foundation.framework */,
+				434E7A0815573497009F0725 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		434E7A0A15573497009F0725 /* iRumpetroll */ = {
+			isa = PBXGroup;
+			children = (
+				434E7A1315573498009F0725 /* RTAppDelegate.h */,
+				434E7A1415573498009F0725 /* RTAppDelegate.m */,
+				434E7A1615573498009F0725 /* MainStoryboard_iPhone.storyboard */,
+				434E7A1915573498009F0725 /* MainStoryboard_iPad.storyboard */,
+				434E7A1C15573498009F0725 /* RTViewController.h */,
+				434E7A1D15573498009F0725 /* RTViewController.m */,
+				434E7A0B15573497009F0725 /* Supporting Files */,
+			);
+			path = iRumpetroll;
+			sourceTree = "<group>";
+		};
+		434E7A0B15573497009F0725 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				434E7A0C15573497009F0725 /* iRumpetroll-Info.plist */,
+				434E7A0D15573497009F0725 /* InfoPlist.strings */,
+				434E7A1015573497009F0725 /* main.m */,
+				434E7A1215573498009F0725 /* iRumpetroll-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		434E79FF15573497009F0725 /* iRumpetroll */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 434E7A2115573498009F0725 /* Build configuration list for PBXNativeTarget "iRumpetroll" */;
+			buildPhases = (
+				434E79FC15573497009F0725 /* Sources */,
+				434E79FD15573497009F0725 /* Frameworks */,
+				434E79FE15573497009F0725 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iRumpetroll;
+			productName = iRumpetroll;
+			productReference = 434E7A0015573497009F0725 /* iRumpetroll.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		434E79F715573497009F0725 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RT;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 434E79FA15573497009F0725 /* Build configuration list for PBXProject "iRumpetroll" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 434E79F515573497009F0725;
+			productRefGroup = 434E7A0115573497009F0725 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				434E79FF15573497009F0725 /* iRumpetroll */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		434E79FE15573497009F0725 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				434E7A0F15573497009F0725 /* InfoPlist.strings in Resources */,
+				434E7A1815573498009F0725 /* MainStoryboard_iPhone.storyboard in Resources */,
+				434E7A1B15573498009F0725 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		434E79FC15573497009F0725 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				434E7A1115573497009F0725 /* main.m in Sources */,
+				434E7A1515573498009F0725 /* RTAppDelegate.m in Sources */,
+				434E7A1E15573498009F0725 /* RTViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		434E7A0D15573497009F0725 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				434E7A0E15573497009F0725 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		434E7A1615573498009F0725 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				434E7A1715573498009F0725 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		434E7A1915573498009F0725 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				434E7A1A15573498009F0725 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		434E7A1F15573498009F0725 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		434E7A2015573498009F0725 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		434E7A2215573498009F0725 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iRumpetroll/iRumpetroll-Prefix.pch";
+				INFOPLIST_FILE = "iRumpetroll/iRumpetroll-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		434E7A2315573498009F0725 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iRumpetroll/iRumpetroll-Prefix.pch";
+				INFOPLIST_FILE = "iRumpetroll/iRumpetroll-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		434E79FA15573497009F0725 /* Build configuration list for PBXProject "iRumpetroll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				434E7A1F15573498009F0725 /* Debug */,
+				434E7A2015573498009F0725 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		434E7A2115573498009F0725 /* Build configuration list for PBXNativeTarget "iRumpetroll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				434E7A2215573498009F0725 /* Debug */,
+				434E7A2315573498009F0725 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 434E79F715573497009F0725 /* Project object */;
+}
