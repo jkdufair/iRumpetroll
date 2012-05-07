@@ -7,6 +7,7 @@
 //
 
 #import "RTViewController.h"
+#import "SRWebSocket.h"
 
 @interface RTViewController ()
 
@@ -33,6 +34,11 @@
     } else {
         return YES;
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 @end
