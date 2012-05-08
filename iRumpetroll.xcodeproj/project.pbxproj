@@ -35,6 +35,7 @@
 		43950E971557716000539C2B /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 43950E8A1557716000539C2B /* SBJsonUTF8Stream.m */; };
 		43950E981557716000539C2B /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 43950E8C1557716000539C2B /* SBJsonWriter.m */; };
 		43950E9B1557765F00539C2B /* RTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 43950E9A1557765F00539C2B /* RTModel.m */; };
+		43AFC748155833FB00BF6790 /* RTCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AFC747155833FB00BF6790 /* RTCamera.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,8 @@
 		43950E8C1557716000539C2B /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		43950E991557765F00539C2B /* RTModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTModel.h; sourceTree = "<group>"; };
 		43950E9A1557765F00539C2B /* RTModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTModel.m; sourceTree = "<group>"; };
+		43AFC746155833FB00BF6790 /* RTCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCamera.h; sourceTree = "<group>"; };
+		43AFC747155833FB00BF6790 /* RTCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCamera.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +151,8 @@
 		434E79F515573497009F0725 = {
 			isa = PBXGroup;
 			children = (
-				43950E731557716000539C2B /* SBJson */,
 				434E7A40155738E5009F0725 /* SocketRocket.xcodeproj */,
+				43950E731557716000539C2B /* SBJson */,
 				434E7A0A15573497009F0725 /* iRumpetroll */,
 				434E7A0315573497009F0725 /* Frameworks */,
 				434E7A0115573497009F0725 /* Products */,
@@ -184,6 +187,10 @@
 				434E7A1615573498009F0725 /* MainStoryboard_iPhone.storyboard */,
 				434E7A1315573498009F0725 /* RTAppDelegate.h */,
 				434E7A1415573498009F0725 /* RTAppDelegate.m */,
+				43AFC746155833FB00BF6790 /* RTCamera.h */,
+				43AFC747155833FB00BF6790 /* RTCamera.m */,
+				43950E991557765F00539C2B /* RTModel.h */,
+				43950E9A1557765F00539C2B /* RTModel.m */,
 				43950E0015575B6800539C2B /* RTTadpole.h */,
 				43950E0115575B6800539C2B /* RTTadpole.m */,
 				434E7A1C15573498009F0725 /* RTViewController.h */,
@@ -191,8 +198,6 @@
 				43950E17155767E000539C2B /* RTWebSocketService.h */,
 				43950E18155767E000539C2B /* RTWebSocketService.m */,
 				434E7A0B15573497009F0725 /* Supporting Files */,
-				43950E991557765F00539C2B /* RTModel.h */,
-				43950E9A1557765F00539C2B /* RTModel.m */,
 			);
 			path = iRumpetroll;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				43950E971557716000539C2B /* SBJsonUTF8Stream.m in Sources */,
 				43950E981557716000539C2B /* SBJsonWriter.m in Sources */,
 				43950E9B1557765F00539C2B /* RTModel.m in Sources */,
+				43AFC748155833FB00BF6790 /* RTCamera.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

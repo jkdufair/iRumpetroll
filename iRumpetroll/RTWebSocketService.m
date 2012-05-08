@@ -64,50 +64,43 @@
 
 - (void)welcomeHandler:(NSDictionary *)data
 {
-    NSLog(@"welcomeHandler");    
-    model.userTadpole.identifier = [data objectForKey:@"id"];
-    [model.tadpoles setObject:model.userTadpole forKey:model.userTadpole.identifier];
-    [model.tadpoles removeObjectForKey:@"temporary"];
+    id ident = [data objectForKey:@"id"];
+    NSString *tempKey = @"temporary";
+    RTTadpole *tadpole = [model tadpoleForKey:tempKey];
+    [model addTadpole:tadpole withId:ident];
+    [model removeTadpole:tempKey];
 }
 
 - (void)updateHandler:(NSDictionary *)data
 {
-    NSLog(@"updateHandler");
+    id ident = [data objectForKey:@"id"];
     BOOL newTadpole = NO;
     if ([model.tadpoles objectForKey:[data objectForKey:@"id"]] == nil)
     {
         newTadpole = YES;
-        [model.tadpoles setObject:[[RTTadpole alloc] init] forKey:[data objectForKey:@"id"]];
+        RTTadpole *tadpole = [[RTTadpole alloc] init];
+        [model addTadpole:tadpole withId:ident];
+        [model removeTadpole:@"temporary"];
     }
     
-    RTTadpole *tadpole = [model.tadpoles objectForKey:[data objectForKey:@"id"]];
-    tadpole.name = [data objectForKey:@"name"];
-    
-    if (tadpole.identifier == model.userTadpole.identifier)
+    RTTadpole *tadpole = [model tadpoleForKey: ident];
+   
+    if (tadpole == model.userTadpole)
         return;
     
     if (newTadpole)
     {
-        tadpole.x = [data objectForKey:@"x"];
-        tadpole.y = [data objectForKey:@"y"];
+        [tadpole setInitialProperties:(NSDictionary *)data];
     } else {
-        tadpole.targetX = [data objectForKey:@"x"];
-        tadpole.targetY = [data objectForKey:@"y"];
-    }
-    
-    tadpole.angle = [data objectForKey:@"angle"];
-    tadpole.momentum = [data objectForKey:@"momentum"];
-    
-    tadpole.timeSinceLastServerUpdate = 0;
-        
+        [tadpole updateProperties:(NSDictionary *)data];
+    }        
 }
 
 - (void)closedHandler:(NSDictionary *)data
 {
-    NSLog(@"closedHandler");
-    if ([model.tadpoles objectForKey:[data objectForKey:@"id"]] != nil)
+    if ([model tadpoleForKey:[data objectForKey:@"id"]] != nil)
     {
-        [model.tadpoles removeObjectForKey:[data objectForKey:@"id"]];
+        [model removeTadpole: [data objectForKey:@"id"]];
     }
 }
 

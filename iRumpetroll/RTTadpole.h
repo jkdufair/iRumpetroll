@@ -10,7 +10,6 @@
 
 @interface RTTadpole : NSObject
 
-@property (nonatomic, strong) NSNumber *identifier;
 @property (nonatomic, strong) NSNumber *x;
 @property (nonatomic, strong) NSNumber *y;
 @property (nonatomic, strong) NSString *name;
@@ -21,5 +20,8 @@
 @property (nonatomic, strong) NSNumber *targetY;
 @property (nonatomic, strong) NSNumber *targetMomentum;
 @property (nonatomic, strong) NSNumber *timeSinceLastServerUpdate;
+
+- (void)setInitialProperties:(NSDictionary *)data;
+- (void)updateProperties:(NSDictionary *)data;
 
 @end

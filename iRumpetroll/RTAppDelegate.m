@@ -26,7 +26,7 @@
 {
     NSRunLoop *currentRunLoop = [NSRunLoop currentRunLoop];
     NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:0.0];
-    timer = [[NSTimer alloc] initWithFireDate:fireDate interval:0.03 target:self selector:@selector(updateAndDraw) userInfo:nil repeats:YES];
+    timer = [[NSTimer alloc] initWithFireDate:fireDate interval:0.03 target:self selector:@selector(sendLocalUpdates) userInfo:nil repeats:YES];
     [currentRunLoop addTimer:timer forMode:NSDefaultRunLoopMode];
     NSLog(@"Timer started");
 }
@@ -58,26 +58,28 @@
 }
 
 #pragma mark - Runloop
-- (void) updateAndDraw
+- (void) sendLocalUpdates
 {
     if (webSocket.readyState == SR_OPEN)
-        [self updateModel];
-}
-
-- (void) updateModel
-{
-    [webSocketService sendUpdate:self.model.userTadpole];
+    {
+        [webSocketService sendUpdate:self.model.userTadpole];
+    }
 }
 
 #pragma mark - Application events
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (void)initializeModel
 {
-    [self connectWebSocket];
     self.model = [[RTModel alloc] init];
     RTTadpole *tadpole = [[RTTadpole alloc] init];
     self.model.userTadpole = tadpole;
-    self.model.tadpoles = [[NSMutableDictionary alloc] initWithObjectsAndKeys:tadpole, @"temporary", nil];
+    [self.model addTadpole:tadpole withId:@"temporary"];
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [self initializeModel];
+    [self connectWebSocket];
     webSocketService = [[RTWebSocketService alloc] initWithModel:self.model socket:webSocket];
     return YES;
 }

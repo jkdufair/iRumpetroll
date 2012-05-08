@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RTModel.h"
 
-@interface RTViewController : UIViewController
+@interface RTViewController : UIViewController <RTModelDelegate>
 
 @end
