@@ -22,6 +22,7 @@
 @implementation RTViewController
 
 #pragma mark - RTModelDelegate implementation
+@synthesize tadpoleDrawingView;
 
 - (void)tadpoleMoved:(RTTadpole *)tadpole key:(id)key
 {
@@ -34,7 +35,7 @@
     UIView *newTadpoleView = [[UIView alloc] initWithFrame:CGRectMake(tadpole.x, tadpole.y, tadpole.size, tadpole.size)];
     newTadpoleView.backgroundColor = [UIColor blueColor];
     [tadpoleViews setObject:newTadpoleView forKey:key];
-    [self.view addSubview:newTadpoleView];
+    [self.tadpoleDrawingView addSubview:newTadpoleView];
     NSLog(@"Tadpole with id %@ added at [%.1f,%.1f]", key, tadpole.x, tadpole.y);
 }
 
@@ -50,10 +51,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.view.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [self.view addGestureRecognizer:tap];
     tadpoleViews = [[NSMutableDictionary alloc] initWithCapacity:10];
     RTAppDelegate *appDelegate = (RTAppDelegate *)[[UIApplication sharedApplication] delegate];
     model = appDelegate.model;
-    RTCamera *camera = [[RTCamera alloc] initWithView:self.view x:model.userTadpole.x y:model.userTadpole.y model:model];
+    RTCamera *camera = [[RTCamera alloc] initWithView:self.tadpoleDrawingView x:model.userTadpole.x y:model.userTadpole.y model:model];
     model.camera = camera;
     model.delegate = self;
     [self tadpoleAdded:model.userTadpole key:model.userTadpole.id];
@@ -61,6 +65,7 @@
 
 - (void)viewDidUnload
 {
+    [self setTadpoleDrawingView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -78,6 +83,24 @@
 {
     [model.camera updateTranslateAndScale];
     [super viewDidAppear:animated];
+}
+
+#pragma mark - Gesture handling
+
+- (void) handleTap:(UIGestureRecognizer *)sender
+{
+    CGPoint tapPoint = [sender locationInView:self.view];
+    if (tapPoint.x > self.view.bounds.size.width / 2) {
+        model.userTadpole.x -= 20;
+    } else {
+        model.userTadpole.x += 20;
+    }
+    if (tapPoint.y > self.view.bounds.size.height / 2) {
+        model.userTadpole.y -= 20;
+    } else {
+        model.userTadpole.y += 20;
+    }
+    NSLog(@"tapped at %.1f, %.1f", tapPoint.x, tapPoint.y);
 }
 
 @end

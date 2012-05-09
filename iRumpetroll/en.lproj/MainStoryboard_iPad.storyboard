@@ -14,8 +14,18 @@
                     <view key="view" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="cFq-yN-xfu">
+                                <rect key="frame" x="-141" y="-29" width="768" height="1004"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="tadpoleDrawingView" destination="cFq-yN-xfu" id="sJM-ua-8iX"/>
+                    </connections>
                 </viewController>
             </objects>
         </scene>
@@ -23,6 +33,9 @@
     <classes>
         <class className="RTViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RTViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tadpoleDrawingView" candidateClass="UIView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

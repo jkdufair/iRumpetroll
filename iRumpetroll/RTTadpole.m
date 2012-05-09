@@ -60,11 +60,16 @@
 
 - (void)updateProperties:(NSDictionary *)data
 {
-    self.targetX = [[data objectForKey:@"x"] floatValue];
-    self.targetY = [[data objectForKey:@"y"] floatValue];
+    float x = [[data objectForKey:@"x"] floatValue];
+    float y = [[data objectForKey:@"y"] floatValue];
+    if (x == NAN || y == NAN) {
+        return;
+    }
+    self.targetX = x;
+    self.targetY = y;
     //temporary
-    self.x = [[data objectForKey:@"x"] floatValue];
-    self.y = [[data objectForKey:@"y"] floatValue];
+    self.x = x;
+    self.y = y;
     [self setProperties:data];
 }
 

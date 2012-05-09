@@ -10,5 +10,6 @@
 #import "RTModel.h"
 
 @interface RTViewController : UIViewController <RTModelDelegate>
+@property (weak, nonatomic) IBOutlet UIView *tadpoleDrawingView;
 
 @end
