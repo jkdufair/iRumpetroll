@@ -10,10 +10,11 @@
 #import "SRWebSocket.h"
 #import "RTModel.h"
 
-@interface RTWebSocketService : NSObject
+@interface RTWebSocketService : NSObject <RTModelRemoteDelegate>
 
 - (id)initWithModel:(RTModel *)aModel socket: (SRWebSocket *)aSocket;
 - (void)processMessage:(NSDictionary *)data;
 - (void) sendUpdate:(RTTadpole *)tadpole;
+- (void)userTadpoleUpdated:(RTTadpole *)tadpole;
 
 @end

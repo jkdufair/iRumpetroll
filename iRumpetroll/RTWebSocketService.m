@@ -22,6 +22,7 @@
     if (self = [super init])
     {
         model = aModel;
+        model.remoteDelegate = self;
         socket = aSocket;
     }
     return self;
@@ -31,6 +32,8 @@
 {
     return [self initWithModel:nil socket:nil];
 }
+
+
 
 #pragma mark - Messaging
 
@@ -43,6 +46,11 @@
     if ([self respondsToSelector:selector])
         [self performSelector:selector withObject:data];
 #pragma clang diagnostic pop
+}
+
+- (void)userTadpoleUpdated:(RTTadpole *)tadpole
+{
+    [self sendUpdate:tadpole];
 }
 
 - (void) sendUpdate:(RTTadpole *)tadpole

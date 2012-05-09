@@ -18,15 +18,21 @@
 - (void)tadpoleMoved:(RTTadpole *)tadpole key:(id)key;
 @end
 
+@protocol RTModelRemoteDelegate
+- (void)userTadpoleUpdated:(RTTadpole *)tadpole;
+@end
+
 @interface RTModel : NSObject
 
 @property (nonatomic, strong) NSMutableDictionary *tadpoles;
 @property (nonatomic, strong) RTTadpole *userTadpole;
 @property (nonatomic, strong) RTCamera *camera;
 @property (assign) id <RTModelDelegate> delegate;
+@property (assign) id <RTModelRemoteDelegate> remoteDelegate;
 
 - (void)addTadpole:(RTTadpole *)tadpole withId:(id)key;
 - (void)removeTadpole:(id)key;
 - (RTTadpole *)tadpoleForKey:(id)key;
 - (void)updateTadpole:(RTTadpole *)tadpole withProperties:(NSDictionary *)data;
+- (void)updateUserTadpole;
 @end

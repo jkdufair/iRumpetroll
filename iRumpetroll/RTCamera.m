@@ -29,8 +29,8 @@
         self.view = aView;
         self.x = anX;
         self.y = aY;
-        self.minZoom = 1.3f;
-        self.maxZoom = 1.8f;
+        self.minZoom = 1.0f;
+        self.maxZoom = 1.0f;
         self.zoom = self.minZoom;
         float hue = (float)random()/RAND_MAX;
         backgroundColor = [UIColor colorWithHue:hue saturation:0.5f brightness:0.3f alpha:1.0f];
@@ -50,6 +50,7 @@
     float targetZoom = (self.maxZoom + (self.minZoom - self.maxZoom) * MIN(self.model.userTadpole.momentum, self.model.userTadpole.maxMomentum) / self.model.userTadpole.maxMomentum);
     self.zoom += (targetZoom - self.zoom) / 60;
     CGPoint delta = CGPointMake((self.model.userTadpole.x - self.x) / 30, (self.model.userTadpole.y - self.y) / 30);
+    delta = CGPointMake(self.model.userTadpole.x - self.x, self.model.userTadpole.y - self.y);
     if (ABS(delta.x) + ABS(delta.y) > 0.1)
     {
         self.x += delta.x;
@@ -65,6 +66,8 @@
     float translateY = h / 2 - self.y * self.zoom;
     translateX = w / 2 - self.x;
     translateY = h / 2 - self.y;
+    float x = self.model.userTadpole.x;
+    float y = self.model.userTadpole.y;
     [self.view setTransform:CGAffineTransformMakeTranslation(translateX, translateY)];
     //[self.view setTransform:CGAffineTransformScale(self.view.transform, self.zoom, self.zoom)];
 }

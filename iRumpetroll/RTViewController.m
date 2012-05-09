@@ -27,7 +27,7 @@
 - (void)tadpoleMoved:(RTTadpole *)tadpole key:(id)key
 {
     UIView *tadpoleView = [tadpoleViews objectForKey:key];
-    [tadpoleView setFrame:CGRectMake(tadpole.x, tadpole.y, tadpole.size, tadpole.size)];
+    [tadpoleView setCenter:CGPointMake(tadpole.x, tadpole.y)];
 }
 
 - (void)tadpoleAdded:(RTTadpole *)tadpole key:(id)key
@@ -100,6 +100,8 @@
     } else {
         model.userTadpole.y += 20;
     }
+    [self tadpoleMoved:model.userTadpole key:model.userTadpole.id];
+    [model updateUserTadpole];
     NSLog(@"tapped at %.1f, %.1f", tapPoint.x, tapPoint.y);
 }
 

@@ -35,7 +35,7 @@
 
 - (void)connectWebSocket;
 {
-    NSString *socketAddress = @"ws://rumpetroll.motherfrog.com:8180"; //@"ws://localhost:8181"
+    NSString *socketAddress = @"ws://localhost:8181"; //@"ws://rumpetroll.motherfrog.com:8180"
     webSocket.delegate = nil;
     [webSocket close];
     
@@ -55,7 +55,7 @@
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket
 {
-    [self startTimer];
+//    [self startTimer];
 }
 
 #pragma mark - Runloop
@@ -65,7 +65,6 @@
     {
         [webSocketService sendUpdate:self.model.userTadpole];
     }
-    [self.model.camera updateTranslateAndScale];
 }
 
 #pragma mark - Application events
@@ -103,13 +102,13 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    [self startTimer];
+    //[self startTimer];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [self startTimer];
+    //[self startTimer];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

@@ -14,6 +14,7 @@
 @synthesize userTadpole = _userTadpole;
 @synthesize camera = _camera;
 @synthesize delegate = _delegate;
+@synthesize remoteDelegate = _remoteDelegate;
 
 - (NSMutableDictionary *)tadpoles
 {
@@ -22,11 +23,6 @@
         _tadpoles = [[NSMutableDictionary alloc] initWithCapacity:10];
     }
     return _tadpoles;
-}
-
-- (void)setUserTadpole:(RTTadpole *)userTadpole
-{
-    _userTadpole = userTadpole;
 }
 
 - (void)addTadpole:(RTTadpole *)tadpole withId:(id)key
@@ -53,4 +49,9 @@
     [self.delegate tadpoleMoved:tadpole key:tadpole.id];
 }
 
+- (void)updateUserTadpole
+{
+    [self.remoteDelegate userTadpoleUpdated:self.userTadpole];
+    [self.camera updateTranslateAndScale];
+}
 @end
