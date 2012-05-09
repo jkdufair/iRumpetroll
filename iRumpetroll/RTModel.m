@@ -24,8 +24,14 @@
     return _tadpoles;
 }
 
+- (void)setUserTadpole:(RTTadpole *)userTadpole
+{
+    _userTadpole = userTadpole;
+}
+
 - (void)addTadpole:(RTTadpole *)tadpole withId:(id)key
 {
+    tadpole.id = key;
     [self.tadpoles setObject:tadpole forKey:key];
     [self.delegate tadpoleAdded:tadpole key:key];
 }
@@ -39,6 +45,12 @@
 - (RTTadpole *)tadpoleForKey:(id)key
 {
     return [self.tadpoles objectForKey:key];
+}
+
+- (void)updateTadpole:(RTTadpole *)tadpole withProperties:(NSDictionary *)data
+{
+    [tadpole updateProperties:data];
+    [self.delegate tadpoleMoved:tadpole key:tadpole.id];
 }
 
 @end

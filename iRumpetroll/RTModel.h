@@ -10,9 +10,12 @@
 #import "RTTadpole.h"
 #import "RTCamera.h"
 
+@class RTCamera;
+
 @protocol RTModelDelegate
 - (void)tadpoleAdded:(RTTadpole *)tadpole key:(id)key;
 - (void)tadpoleRemoved:(id)key;
+- (void)tadpoleMoved:(RTTadpole *)tadpole key:(id)key;
 @end
 
 @interface RTModel : NSObject
@@ -25,5 +28,5 @@
 - (void)addTadpole:(RTTadpole *)tadpole withId:(id)key;
 - (void)removeTadpole:(id)key;
 - (RTTadpole *)tadpoleForKey:(id)key;
-
+- (void)updateTadpole:(RTTadpole *)tadpole withProperties:(NSDictionary *)data;
 @end

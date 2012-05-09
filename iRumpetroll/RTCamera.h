@@ -7,17 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RTModel.h"
+
+@class RTModel;
 
 @interface RTCamera : NSObject
 
 @property UIView *view;
-@property NSNumber *x;
-@property NSNumber *y;
-@property NSNumber *minZoom;
-@property NSNumber *maxZoom;
-@property NSNumber *zoom;
+@property float x;
+@property float y;
+@property float minZoom;
+@property float maxZoom;
+@property float zoom;
+@property RTModel *model;
 
-- (id)initWithView:(UIView *)aView x: (NSNumber *)anX y:(NSNumber *)aY;
-- (void)setUpContext;
+- (id)initWithView:(UIView *)aView x:(float)anX y:(float)aY model:(RTModel *)model;
+- (void)updateTranslateAndScale;
 
 @end

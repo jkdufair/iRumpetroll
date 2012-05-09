@@ -10,16 +10,19 @@
 
 @interface RTTadpole : NSObject
 
-@property (nonatomic, strong) NSNumber *x;
-@property (nonatomic, strong) NSNumber *y;
+@property (nonatomic, strong) id id;
+@property (nonatomic, assign) float x;
+@property (nonatomic, assign) float y;
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSNumber *age;
-@property (nonatomic, strong) NSNumber *angle;
-@property (nonatomic, strong) NSNumber *momentum;
-@property (nonatomic, strong) NSNumber *targetX;
-@property (nonatomic, strong) NSNumber *targetY;
-@property (nonatomic, strong) NSNumber *targetMomentum;
-@property (nonatomic, strong) NSNumber *timeSinceLastServerUpdate;
+@property (nonatomic, assign) int age;
+@property (nonatomic, assign) float angle;
+@property (nonatomic, assign) float momentum;
+@property (nonatomic, assign) float targetX;
+@property (nonatomic, assign) float targetY;
+@property (nonatomic, assign) float targetMomentum;
+@property (nonatomic, assign) int timeSinceLastServerUpdate;
+@property (nonatomic, assign) float maxMomentum;
+@property (nonatomic, assign) float size;
 
 - (void)setInitialProperties:(NSDictionary *)data;
 - (void)updateProperties:(NSDictionary *)data;

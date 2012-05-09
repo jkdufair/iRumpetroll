@@ -39,8 +39,9 @@
     NSString *handler = [NSString stringWithFormat:@"%@%@", [data objectForKey:@"type"], @"Handler:"];
     SEL selector = NSSelectorFromString(handler);
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"    
-    [self performSelector:selector withObject:data];
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    if ([self respondsToSelector:selector])
+        [self performSelector:selector withObject:data];
 #pragma clang diagnostic pop
 }
 
@@ -48,10 +49,10 @@
 {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                           @"update", @"type",
-                          [NSString stringWithFormat:@"%.1f", [tadpole.x floatValue]], @"x",
-                          [NSString stringWithFormat:@"%.1f", [tadpole.y floatValue]], @"y",
-                          [NSString stringWithFormat:@"%.3f", [tadpole.angle floatValue]], @"angle",
-                          [NSString stringWithFormat:@"%.3f", [tadpole.momentum floatValue]], @"momentum",
+                          [NSString stringWithFormat:@"%.1f", tadpole.x], @"x",
+                          [NSString stringWithFormat:@"%.1f", tadpole.y], @"y",
+                          [NSString stringWithFormat:@"%.3f", tadpole.angle], @"angle",
+                          [NSString stringWithFormat:@"%.3f", tadpole.momentum], @"momentum",
                           nil];
     if (tadpole.name != nil)
     {
@@ -64,10 +65,10 @@
 
 - (void)welcomeHandler:(NSDictionary *)data
 {
-    id ident = [data objectForKey:@"id"];
+    id id = [data objectForKey:@"id"];
     NSString *tempKey = @"temporary";
     RTTadpole *tadpole = [model tadpoleForKey:tempKey];
-    [model addTadpole:tadpole withId:ident];
+    [model addTadpole:tadpole withId:id];
     [model removeTadpole:tempKey];
 }
 
@@ -75,25 +76,17 @@
 {
     id ident = [data objectForKey:@"id"];
     BOOL newTadpole = NO;
-    if ([model.tadpoles objectForKey:[data objectForKey:@"id"]] == nil)
+    if ([model.tadpoles objectForKey:ident] == nil)
     {
         newTadpole = YES;
         RTTadpole *tadpole = [[RTTadpole alloc] init];
+        [tadpole setInitialProperties:(NSDictionary *)data];
         [model addTadpole:tadpole withId:ident];
-        [model removeTadpole:@"temporary"];
     }
     
-    RTTadpole *tadpole = [model tadpoleForKey: ident];
-   
-    if (tadpole == model.userTadpole)
-        return;
-    
-    if (newTadpole)
-    {
-        [tadpole setInitialProperties:(NSDictionary *)data];
-    } else {
-        [tadpole updateProperties:(NSDictionary *)data];
-    }        
+    RTTadpole *tadpole = [model tadpoleForKey:ident];
+    if (tadpole != model.userTadpole && !newTadpole)
+        [model updateTadpole:tadpole withProperties:(NSDictionary *)data];
 }
 
 - (void)closedHandler:(NSDictionary *)data

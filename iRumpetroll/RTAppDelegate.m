@@ -35,10 +35,11 @@
 
 - (void)connectWebSocket;
 {
+    NSString *socketAddress = @"ws://rumpetroll.motherfrog.com:8180"; //@"ws://localhost:8181"
     webSocket.delegate = nil;
     [webSocket close];
     
-    webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://localhost:8181"]]];
+    webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:socketAddress]]];
     webSocket.delegate = self;
     
     [webSocket open];
@@ -64,6 +65,7 @@
     {
         [webSocketService sendUpdate:self.model.userTadpole];
     }
+    [self.model.camera updateTranslateAndScale];
 }
 
 #pragma mark - Application events
