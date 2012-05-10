@@ -8,6 +8,7 @@
 
 #import "RTCamera.h"
 #include <stdlib.h>
+#include <QuartzCore/QuartzCore.h>
 
 @implementation RTCamera
 {
@@ -60,16 +61,20 @@
 
 - (void)translateAndScale
 {
-    float w = self.view.bounds.size.width;
-    float h = self.view.bounds.size.height;
+    float w = self.view.frame.size.width;
+    float h = self.view.frame.size.height;
     float translateX = w / 2 - self.x * self.zoom;
     float translateY = h / 2 - self.y * self.zoom;
     translateX = w / 2 - self.x;
     translateY = h / 2 - self.y;
-    float x = self.model.userTadpole.x;
-    float y = self.model.userTadpole.y;
+//    [self.view setTransform:CGAffineTransformScale(self.view.transform, 1.3f, 1.3f)];
     [self.view setTransform:CGAffineTransformMakeTranslation(translateX, translateY)];
-    //[self.view setTransform:CGAffineTransformScale(self.view.transform, self.zoom, self.zoom)];
+//    CGAffineTransform tr = CGAffineTransformScale(self.view.transform, 2, 2);
+//    CGFloat h2 = self.view.frame.size.height;
+//    [UIView animateWithDuration:2.5 delay:0 options:0 animations:^{
+//        self.view.transform = tr;
+//        self.view.center = CGPointMake(translateX + self.model.userTadpole.x, translateY + self.model.userTadpole.y);
+//    } completion:^(BOOL finished) {}];
 }
 
 @end

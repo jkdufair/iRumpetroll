@@ -79,8 +79,11 @@ float const HYSTERESIS_VALUE = 0.05f;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return NO;
+{if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    } else {
+        return interfaceOrientation == UIInterfaceOrientationPortrait;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated

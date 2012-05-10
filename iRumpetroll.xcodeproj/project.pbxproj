@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430DE7F1155C3FD9004AD24A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430DE7F0155C3FD9004AD24A /* QuartzCore.framework */; };
 		434E7A0515573497009F0725 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434E7A0415573497009F0725 /* UIKit.framework */; };
 		434E7A0715573497009F0725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434E7A0615573497009F0725 /* Foundation.framework */; };
 		434E7A0915573497009F0725 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434E7A0815573497009F0725 /* CoreGraphics.framework */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		430DE7F0155C3FD9004AD24A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		434E7A0015573497009F0725 /* iRumpetroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRumpetroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		434E7A0415573497009F0725 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		434E7A0615573497009F0725 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				430DE7F1155C3FD9004AD24A /* QuartzCore.framework in Frameworks */,
 				434E7A5515573B1F009F0725 /* libSocketRocket.a in Frameworks */,
 				434E7A3E155737FB009F0725 /* Security.framework in Frameworks */,
 				434E7A3C155737F1009F0725 /* CFNetwork.framework in Frameworks */,
@@ -151,6 +154,7 @@
 		434E79F515573497009F0725 = {
 			isa = PBXGroup;
 			children = (
+				430DE7F0155C3FD9004AD24A /* QuartzCore.framework */,
 				434E7A40155738E5009F0725 /* SocketRocket.xcodeproj */,
 				43950E731557716000539C2B /* SBJson */,
 				434E7A0A15573497009F0725 /* iRumpetroll */,
