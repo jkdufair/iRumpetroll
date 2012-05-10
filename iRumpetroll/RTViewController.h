@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "RTModel.h"
 
-@interface RTViewController : UIViewController <RTModelDelegate>
+extern CGPoint const BALANCE_POINT;
+extern float const HYSTERESIS_VALUE;
+
+@interface RTViewController : UIViewController <RTModelDelegate, UIAccelerometerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *tadpoleDrawingView;
 
 @end

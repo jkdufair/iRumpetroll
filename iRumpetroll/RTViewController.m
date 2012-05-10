@@ -11,6 +11,9 @@
 #import "RTModel.h"
 #import "RTAppDelegate.h"
 
+CGPoint const BALANCE_POINT = {0.0f, 0.0f};
+float const HYSTERESIS_VALUE = 0.05f;
+
 @interface RTViewController ()
 {
     RTModel *model;
@@ -20,6 +23,9 @@
 @end
 
 @implementation RTViewController
+{
+
+}
 
 #pragma mark - RTModelDelegate implementation
 @synthesize tadpoleDrawingView;
@@ -61,6 +67,8 @@
     model.camera = camera;
     model.delegate = self;
     [self tadpoleAdded:model.userTadpole key:model.userTadpole.id];
+    [[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.1f];
+    [[UIAccelerometer sharedAccelerometer] setDelegate:self];
 }
 
 - (void)viewDidUnload
@@ -72,11 +80,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
+    return NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -103,6 +107,18 @@
     [self tadpoleMoved:model.userTadpole key:model.userTadpole.id];
     [model updateUserTadpole];
     NSLog(@"tapped at %.1f, %.1f", tapPoint.x, tapPoint.y);
+}
+
+- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
+{
+//    if (acceleration.x - BALANCE_POINT.x > HYSTERESIS_VALUE) {
+        model.userTadpole.x += (acceleration.x - BALANCE_POINT.x) * 15;
+//    }
+//    if (acceleration.y - BALANCE_POINT.y > HYSTERESIS_VALUE) {
+        model.userTadpole.y -= (acceleration.y - BALANCE_POINT.y) * 15;
+//    }
+    [self tadpoleMoved:model.userTadpole key:model.userTadpole.id];
+    [model updateUserTadpole];
 }
 
 @end

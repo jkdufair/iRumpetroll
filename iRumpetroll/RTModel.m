@@ -30,6 +30,7 @@
     tadpole.id = key;
     [self.tadpoles setObject:tadpole forKey:key];
     [self.delegate tadpoleAdded:tadpole key:key];
+    [self.remoteDelegate userTadpoleUpdated:self.userTadpole];
 }
 
 - (void)removeTadpole:(id)key

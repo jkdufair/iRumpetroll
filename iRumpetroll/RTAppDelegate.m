@@ -35,7 +35,8 @@
 
 - (void)connectWebSocket;
 {
-    NSString *socketAddress = @"ws://localhost:8181"; //@"ws://rumpetroll.motherfrog.com:8180"
+//    NSString *socketAddress = @"ws://localhost:8181";
+    NSString *socketAddress = @"ws://rumpetroll.motherfrog.com:8180";
     webSocket.delegate = nil;
     [webSocket close];
     
@@ -74,7 +75,7 @@
     self.model = [[RTModel alloc] init];
     RTTadpole *tadpole = [[RTTadpole alloc] init];
     self.model.userTadpole = tadpole;
-    [self.model addTadpole:tadpole withId:@"temporary"];
+    [self.model addTadpole:tadpole withId:@"-1"];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

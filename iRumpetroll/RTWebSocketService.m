@@ -50,7 +50,9 @@
 
 - (void)userTadpoleUpdated:(RTTadpole *)tadpole
 {
-    [self sendUpdate:tadpole];
+    if (socket.readyState == SR_OPEN) {
+        [self sendUpdate:tadpole];
+    }
 }
 
 - (void) sendUpdate:(RTTadpole *)tadpole
@@ -74,7 +76,7 @@
 - (void)welcomeHandler:(NSDictionary *)data
 {
     id id = [data objectForKey:@"id"];
-    NSString *tempKey = @"temporary";
+    NSString *tempKey = @"-1";
     RTTadpole *tadpole = [model tadpoleForKey:tempKey];
     [model addTadpole:tadpole withId:id];
     [model removeTadpole:tempKey];
