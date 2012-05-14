@@ -15,8 +15,8 @@
 @property (nonatomic, assign) float y;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign) int age;
-@property (nonatomic, assign) float angle;
-@property (nonatomic, assign) float momentum;
+@property (nonatomic, assign) double angle;
+@property (nonatomic, assign) double momentum;
 @property (nonatomic, assign) float targetX;
 @property (nonatomic, assign) float targetY;
 @property (nonatomic, assign) float targetMomentum;

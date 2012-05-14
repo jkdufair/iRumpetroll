@@ -21,6 +21,16 @@
 		434E7A3C155737F1009F0725 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434E7A3B155737F1009F0725 /* CFNetwork.framework */; };
 		434E7A3E155737FB009F0725 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434E7A3D155737FB009F0725 /* Security.framework */; };
 		434E7A5515573B1F009F0725 /* libSocketRocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 434E7A4C155738E5009F0725 /* libSocketRocket.a */; };
+		437D5563155D654600C0A9DE /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 437D555B155D654500C0A9DE /* 0.png */; };
+		437D5564155D654600C0A9DE /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 437D555C155D654500C0A9DE /* 1.png */; };
+		437D5565155D654600C0A9DE /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 437D555D155D654500C0A9DE /* 2.png */; };
+		437D5566155D654600C0A9DE /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 437D555E155D654500C0A9DE /* 3.png */; };
+		437D5567155D654600C0A9DE /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 437D555F155D654500C0A9DE /* 4.png */; };
+		437D5568155D654600C0A9DE /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 437D5560155D654500C0A9DE /* 5.png */; };
+		437D5569155D654600C0A9DE /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 437D5561155D654500C0A9DE /* 6.png */; };
+		437D556A155D654600C0A9DE /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 437D5562155D654600C0A9DE /* 7.png */; };
+		437D556C155D68D700C0A9DE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 437D556B155D68D700C0A9DE /* icon.png */; };
+		437D556E155D696700C0A9DE /* ipad-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 437D556D155D696700C0A9DE /* ipad-icon.png */; };
 		43950E0215575B6800539C2B /* RTTadpole.m in Sources */ = {isa = PBXBuildFile; fileRef = 43950E0115575B6800539C2B /* RTTadpole.m */; };
 		43950E19155767E000539C2B /* RTWebSocketService.m in Sources */ = {isa = PBXBuildFile; fileRef = 43950E18155767E000539C2B /* RTWebSocketService.m */; };
 		43950E8D1557716000539C2B /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 43950E751557716000539C2B /* NSObject+SBJson.m */; };
@@ -97,6 +107,16 @@
 		434E7A3B155737F1009F0725 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		434E7A3D155737FB009F0725 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		434E7A40155738E5009F0725 /* SocketRocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SocketRocket.xcodeproj; path = SocketRocket/SocketRocket.xcodeproj; sourceTree = "<group>"; };
+		437D555B155D654500C0A9DE /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		437D555C155D654500C0A9DE /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		437D555D155D654500C0A9DE /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		437D555E155D654500C0A9DE /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		437D555F155D654500C0A9DE /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		437D5560155D654500C0A9DE /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		437D5561155D654500C0A9DE /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		437D5562155D654600C0A9DE /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		437D556B155D68D700C0A9DE /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		437D556D155D696700C0A9DE /* ipad-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-icon.png"; sourceTree = "<group>"; };
 		43950E0015575B6800539C2B /* RTTadpole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTTadpole.h; sourceTree = "<group>"; };
 		43950E0115575B6800539C2B /* RTTadpole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTTadpole.m; sourceTree = "<group>"; };
 		43950E17155767E000539C2B /* RTWebSocketService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTWebSocketService.h; sourceTree = "<group>"; };
@@ -154,6 +174,16 @@
 		434E79F515573497009F0725 = {
 			isa = PBXGroup;
 			children = (
+				437D556D155D696700C0A9DE /* ipad-icon.png */,
+				437D556B155D68D700C0A9DE /* icon.png */,
+				437D555B155D654500C0A9DE /* 0.png */,
+				437D555C155D654500C0A9DE /* 1.png */,
+				437D555D155D654500C0A9DE /* 2.png */,
+				437D555E155D654500C0A9DE /* 3.png */,
+				437D555F155D654500C0A9DE /* 4.png */,
+				437D5560155D654500C0A9DE /* 5.png */,
+				437D5561155D654500C0A9DE /* 6.png */,
+				437D5562155D654600C0A9DE /* 7.png */,
 				430DE7F0155C3FD9004AD24A /* QuartzCore.framework */,
 				434E7A40155738E5009F0725 /* SocketRocket.xcodeproj */,
 				43950E731557716000539C2B /* SBJson */,
@@ -353,6 +383,16 @@
 				434E7A0F15573497009F0725 /* InfoPlist.strings in Resources */,
 				434E7A1815573498009F0725 /* MainStoryboard_iPhone.storyboard in Resources */,
 				434E7A1B15573498009F0725 /* MainStoryboard_iPad.storyboard in Resources */,
+				437D5563155D654600C0A9DE /* 0.png in Resources */,
+				437D5564155D654600C0A9DE /* 1.png in Resources */,
+				437D5565155D654600C0A9DE /* 2.png in Resources */,
+				437D5566155D654600C0A9DE /* 3.png in Resources */,
+				437D5567155D654600C0A9DE /* 4.png in Resources */,
+				437D5568155D654600C0A9DE /* 5.png in Resources */,
+				437D5569155D654600C0A9DE /* 6.png in Resources */,
+				437D556A155D654600C0A9DE /* 7.png in Resources */,
+				437D556C155D68D700C0A9DE /* icon.png in Resources */,
+				437D556E155D696700C0A9DE /* ipad-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,9 +23,6 @@ float const HYSTERESIS_VALUE = 0.05f;
 @end
 
 @implementation RTViewController
-{
-
-}
 
 #pragma mark - RTModelDelegate implementation
 @synthesize tadpoleDrawingView;
@@ -33,15 +30,42 @@ float const HYSTERESIS_VALUE = 0.05f;
 - (void)tadpoleMoved:(RTTadpole *)tadpole key:(id)key
 {
     UIView *tadpoleView = [tadpoleViews objectForKey:key];
+    CGAffineTransform transform = CGAffineTransformMakeRotation(tadpole.angle);
+    tadpoleView.transform = transform;
     [tadpoleView setCenter:CGPointMake(tadpole.x, tadpole.y)];
 }
 
 - (void)tadpoleAdded:(RTTadpole *)tadpole key:(id)key
 {
-    UIView *newTadpoleView = [[UIView alloc] initWithFrame:CGRectMake(tadpole.x, tadpole.y, tadpole.size, tadpole.size)];
-    newTadpoleView.backgroundColor = [UIColor blueColor];
-    [tadpoleViews setObject:newTadpoleView forKey:key];
-    [self.tadpoleDrawingView addSubview:newTadpoleView];
+    UIView *tadpoleContainer = [[UIView alloc] initWithFrame:CGRectMake(tadpole.x, tadpole.y, 100, 80)];
+    
+    UIImageView *newTadpoleView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    newTadpoleView.animationImages = [NSArray arrayWithObjects:
+                                      [UIImage imageNamed:@"0.png"],
+                                      [UIImage imageNamed:@"1.png"],
+                                      [UIImage imageNamed:@"2.png"],
+                                      [UIImage imageNamed:@"3.png"],
+                                      [UIImage imageNamed:@"4.png"],
+                                      [UIImage imageNamed:@"5.png"],
+                                      [UIImage imageNamed:@"6.png"],
+                                      [UIImage imageNamed:@"7.png"],
+                                      nil];
+    newTadpoleView.animationDuration = 1.0f;
+    newTadpoleView.animationRepeatCount = 0;
+    [newTadpoleView startAnimating];
+    [tadpoleContainer addSubview:newTadpoleView];
+    
+    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 100, 30)];
+    nameLabel.text = tadpole.name;
+    nameLabel.font = [UIFont fontWithName:@"Arial" size:10.0f];
+    nameLabel.backgroundColor = [UIColor clearColor];
+    nameLabel.textColor = [UIColor whiteColor];
+    [tadpoleContainer addSubview:nameLabel];
+    
+    CGAffineTransform transform = CGAffineTransformMakeRotation(tadpole.angle);
+    tadpoleContainer.transform = transform;
+    [self.tadpoleDrawingView addSubview:tadpoleContainer];    
+    [tadpoleViews setObject:tadpoleContainer forKey:key];
     NSLog(@"Tadpole with id %@ added at [%.1f,%.1f]", key, tadpole.x, tadpole.y);
 }
 
@@ -114,12 +138,19 @@ float const HYSTERESIS_VALUE = 0.05f;
 
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
+    double x = acceleration.x;
+    double y = acceleration.y;
 //    if (acceleration.x - BALANCE_POINT.x > HYSTERESIS_VALUE) {
-        model.userTadpole.x += (acceleration.x - BALANCE_POINT.x) * 15;
+        model.userTadpole.x += (x - BALANCE_POINT.x) * 15;
 //    }
 //    if (acceleration.y - BALANCE_POINT.y > HYSTERESIS_VALUE) {
-        model.userTadpole.y -= (acceleration.y - BALANCE_POINT.y) * 15;
+        model.userTadpole.y -= (y - BALANCE_POINT.y) * 15;
 //    }
+    double ratio = x == 0 ? INFINITY : y/x;
+    double angle = M_PI * round(x - 0.5f) + copysign(1.0, x * y) * atan(ratio);
+    model.userTadpole.angle = angle;
+    double momentum = sqrt(pow(x, 2.0) + pow(y, 2.0)) * 3 / 1.4;
+    model.userTadpole.momentum = momentum;
     [self tadpoleMoved:model.userTadpole key:model.userTadpole.id];
     [model updateUserTadpole];
 }

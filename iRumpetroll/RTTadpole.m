@@ -38,6 +38,8 @@
         self.targetMomentum = 0.0f;
         self.timeSinceLastServerUpdate = 0;
         self.size = 4.0f;
+        NSArray *names = [[NSArray alloc] initWithObjects:@"Mal", @"Inara", @"Jayne", @"Kaylee", @"Zoe", @"Wash", @"Simon", @"River", @"Shepherd Book", nil];
+        self.name = [names objectAtIndex:arc4random() % names.count];
     }
     return self;    
 }
